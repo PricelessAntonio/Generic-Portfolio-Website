@@ -3,4 +3,6 @@ venv
 
 *.pyc
 
+settings_secret.py
+
 db.sqlite3
