@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView
 
 
-class HomeView(TemplateView):
+class AboutMeView(TemplateView):
     http_method_names = ['get']
-    template_name = "home/index.html"
+    template_name = "about_me/about.html"
