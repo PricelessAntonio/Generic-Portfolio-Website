@@ -4,8 +4,40 @@
   <head>
     <title>{% block title %}{% endblock %}Website Name</title>
     <meta charset="utf-8"/>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bulma.min.css' %}"/>
+    <script src="{% static 'js/burger.js' %}"></script>
   </head>
   <body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="{% url 'home' %}">
+          <img src="{% static 'images/logo.png' %}" width="112" height="28">
+        </a>
+        <a role="button" class="navbar-burger burger" data-target="navMenu" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="{% url 'about' %}">
+            About
+          </a>
+          <a class="navbar-item" href="{% url 'project_list' %}">
+            Projects
+          </a>
+          <a class="navbar-item">
+            Contact
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- Navigation Bar end -->
+
     {% block content %}
     {% endblock %}
   </body>
