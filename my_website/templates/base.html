@@ -11,7 +11,7 @@
   <body>
 
     <!-- Navigation Bar -->
-    <nav class="navbar" role="navigation">
+    <nav class="navbar is-fixed-top" role="navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="{% url 'home' %}">
           <img src="{% static 'images/logo.png' %}" width="112" height="28">
@@ -40,6 +40,17 @@
 
     {% block content %}
     {% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      This is a footer.  Feel free to put anything here
+    </p>
+  </div>
+</footer>
+    <!-- Footer end -->
+
   </body>
 </html>
 <!-- End of base template -->
