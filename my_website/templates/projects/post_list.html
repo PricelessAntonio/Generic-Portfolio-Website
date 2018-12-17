@@ -6,4 +6,8 @@
 {%block hero_subtitle %}Single project name{% endblock %}
 
 {% block content %}
+{% for project_post in all_project_posts %}
+  <br>
+    {{ project_post.project_post_title }}
+{% endfor %}
 {% endblock content %}

@@ -2,8 +2,14 @@
 
 {% block title %}Projects | {% endblock %}
 
-{% block hero_title %}Projects{% endblock %}
-{%block hero_subtitle %}The projects you're working on{% endblock %}
+{% block hero_title %}My Projects{% endblock %}
+{%block hero_subtitle %}A list of projects I have been working on{% endblock %}
 
 {% block content %}
+{% for project in all_projects %}
+  <br>
+  <a href="{% url 'project_post_list' project.id %}">
+    {{ project.project_title }}
+  </a>
+{% endfor %}
 {% endblock content %}

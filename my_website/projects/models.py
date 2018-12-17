@@ -11,6 +11,9 @@ class Project(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True,
                              null=True)
 
+    def __str__(self):
+        return 'Project: ' + self.project_title
+
 
 class ProjectPost(models.Model):
     project_post_date = models.DateTimeField(auto_now_add=True)
@@ -19,3 +22,6 @@ class ProjectPost(models.Model):
     project_post_image = models.ImageField(blank=True, null=True)
     project = models.ForeignKey(Project, on_delete=models.SET_NULL, blank=True,
                                 null=True)
+
+    def __str__(self):
+        return 'ProjectPost: ' + self.project_post_title
