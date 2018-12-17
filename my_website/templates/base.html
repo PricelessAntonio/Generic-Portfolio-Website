@@ -24,9 +24,6 @@
       </div>
       <div class="navbar-menu" id="navMenu">
         <div class="navbar-end">
-          <a class="navbar-item" href="{% url 'about' %}">
-            About
-          </a>
           <a class="navbar-item" href="{% url 'project_list' %}">
             Projects
           </a>
@@ -37,6 +34,23 @@
       </div>
     </nav>
     <!-- Navigation Bar end -->
+
+    <!-- Hero -->
+    <section class="hero is-medium">
+      <div class="hero-body">
+        <div class="container">
+          <div class="column is-6 is-offset-1">
+            <h1 class="title">
+              {% block hero_title %}{% endblock %}
+            </h1>
+            <h2 class="subtitle">
+              {%block hero_subtitle %}{% endblock %}
+            </h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hero end -->
 
     {% block content %}
     {% endblock %}
