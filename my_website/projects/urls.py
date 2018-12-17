@@ -1,9 +1,9 @@
-from django.urls import path, re_path
+from django.urls import path
 
-from .views import ProjectDetailView, ProjectListView
+from .views import ProjectPostListView, ProjectListView
 
 urlpatterns = [
     path('', ProjectListView.as_view(), name='project_list'),
-    re_path(r'^(?P<project_id>[-\w]+)/$', ProjectDetailView.as_view(),
-            name='project_detail'),
+    path('<int:project_id>', ProjectPostListView.as_view(),
+         name='project_post_list'),
 ]

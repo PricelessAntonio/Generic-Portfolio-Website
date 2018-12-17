@@ -16,6 +16,6 @@ class ProjectPost(models.Model):
     project_post_date = models.DateTimeField(auto_now_add=True)
     project_post_title = models.CharField(max_length=100)
     project_post_content = models.CharField(max_length=40000)
-    project_post_image = models.ImageField()
+    project_post_image = models.ImageField(blank=True, null=True)
     project = models.ForeignKey(Project, on_delete=models.SET_NULL, blank=True,
                                 null=True)
