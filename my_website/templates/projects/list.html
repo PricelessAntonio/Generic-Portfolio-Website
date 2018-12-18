@@ -6,10 +6,42 @@
 {%block hero_subtitle %}A list of projects I have been working on{% endblock %}
 
 {% block content %}
-{% for project in all_projects %}
   <br>
-  <a href="{% url 'project_post_list' project.id %}">
-    {{ project.project_title }}
-  </a>
-{% endfor %}
+  <div class="block">
+    <section class="section">
+      <div class="columns is-multiline">
+        {% for project in all_projects %}
+        <div class="column is-one-quarter">
+          <div class="card">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4">{{ project.project_title }}</p>
+                  <p class="subtitle is-6">
+                    Description: {{ project.project_description }}
+                    <br>
+                    <br>
+                    {% if project.project_completion_status %}
+                      <span class="tag is-rounded is-success">Complete</span>
+                    {% else %}
+                      <span class="tag is-rounded is-warning">In Progress</span>
+                    {% endif %}
+                  </p>
+                </div>
+              </div>
+              <div class="content">
+                <h6 class="is-6">Started on: {{ project.project_date }}</h6>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <a href="{% url 'project_post_list' project.id %}" class="card-footer-item">
+                Learn More
+              </a>
+            </footer>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
 {% endblock content %}
