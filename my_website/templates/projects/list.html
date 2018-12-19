@@ -5,11 +5,14 @@
 {% block hero_title %}My Projects{% endblock %}
 {%block hero_subtitle %}A list of projects I have been working on{% endblock %}
 
-{% block content %}
+{% block hero_content %}
+
   <br>
+
+  <!-- Project Card -->
   <div class="block">
     <section class="section">
-      <div class="columns is-multiline">
+      <div class="columns is-multiline is-vcentered">
         {% for project in all_projects %}
         <div class="column is-one-quarter">
           <div class="card">
@@ -18,7 +21,7 @@
                 <div class="media-content">
                   <p class="title is-4">{{ project.project_title }}</p>
                   <p class="subtitle is-6">
-                    Description: {{ project.project_description }}
+                    {{ project.project_description }}
                     <br>
                     <br>
                     {% if project.project_completion_status %}
@@ -35,7 +38,7 @@
             </div>
             <footer class="card-footer">
               <a href="{% url 'project_post_list' project.id %}" class="card-footer-item">
-                Learn More
+                View Updates
               </a>
             </footer>
           </div>
@@ -44,4 +47,6 @@
       </div>
     </section>
   </div>
-{% endblock content %}
+  <!-- Project Card end -->
+
+{% endblock hero_content %}
